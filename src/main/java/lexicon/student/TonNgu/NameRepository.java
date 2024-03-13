@@ -17,7 +17,7 @@ public class NameRepository {
         names = new String[0];
     }
 
-    public static String[] findAll() { //return the content of current names array in a new array findAllResult
+    public static String[] findAll() { //return the content of current names array in a new array
         return Arrays.copyOf(names, names.length);
     }
 
@@ -44,7 +44,7 @@ public class NameRepository {
     public static String[] findByFirstName(final String firstName) { //search through stored names by firstName, returns an array with all hit
         String[] searchResult = new String[0];
         for (String name : names) {
-            if (name.startsWith(firstName)) {
+            if (name.startsWith(firstName+" ")) {
                 searchResult = Arrays.copyOf(searchResult, searchResult.length + 1);
                 searchResult[searchResult.length - 1] = name;
             }
@@ -55,7 +55,7 @@ public class NameRepository {
     public static String[] findByLastName(final String lastName) { //search through stored names by lastName, returns an array with all hit
         String[] searchResult = new String[0];
         for (String name : names) {
-            if (name.endsWith(lastName)) {
+            if (name.endsWith(" "+lastName)) {
                 searchResult = Arrays.copyOf(searchResult, searchResult.length + 1);
                 searchResult[searchResult.length - 1] = name;
             }
