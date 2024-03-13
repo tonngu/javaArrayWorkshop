@@ -8,7 +8,7 @@ public class NameRepository {
     }
 
     public static void setNames(String[] names) { //send in a new array to replace current names array's content
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < names.length-1; i++) {
             NameRepository.names[i] = names[i];
         }
     }
@@ -18,8 +18,8 @@ public class NameRepository {
     }
 
     public static String[] findAll() { //return the content of current names array in a new array newNames
-        String[] newNames = new String[3];
-        for (int i = 0; i < 3; i++) {
+        String[] newNames = new String[names.length];
+        for (int i = 0; i < names.length-1; i++) {
             newNames[i] = names[i];
         }
         return newNames;
