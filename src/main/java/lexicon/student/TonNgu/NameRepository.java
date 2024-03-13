@@ -18,16 +18,16 @@ public class NameRepository {
     }
 
     public static String[] findAll() { //return the content of current names array in a new array newNames
-        String[] newNames = new String[names.length];
+        String[] findAllResult = new String[names.length];
         for (int i = 0; i < names.length; i++) {
-            newNames[i] = names[i];
+            findAllResult[i] = names[i];
         }
-        return newNames;
+        return findAllResult;
     }
 
     public static String find(final String fullName) {
         for (String check : names) {
-            if (check != null && check.equals(fullName)) {
+            if (check.equals(fullName)) {
                 return check;
             }
         }
@@ -35,6 +35,15 @@ public class NameRepository {
     }
 
     public static boolean add(final String fullName) {
-        return true;
+
+        if (find(fullName) == null) {
+            String addedName = fullName;
+            String[] copiedArray = Arrays.copyOf(names, names.length + 1);
+            copiedArray[copiedArray.length - 1] = addedName;
+            names = copiedArray;
+            return true;
+        } else {
+            return false;
+        }
     }
 }
