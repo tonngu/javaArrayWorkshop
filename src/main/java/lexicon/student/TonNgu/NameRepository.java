@@ -24,4 +24,12 @@ public class NameRepository {
         }
         return newNames;
     }
+
+    public static String find(final String fullName){
+
+    }
+
+    public static boolean add(final String fullName){
+
+    }
 }
