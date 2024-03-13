@@ -1,25 +1,25 @@
 package lexicon.student.TonNgu;
 
+import java.util.Arrays;
+
 public class NameRepository {
-    private static String[] names = new String[3];
+    private static String[] names = new String[0];
 
     public static int getSize() { //return array names size
         return names.length;
     }
 
-    public static void setNames(String[] names) { //send in a new array to replace current names array's content
-        for (int i = 0; i < names.length-1; i++) {
-            NameRepository.names[i] = names[i];
-        }
+    public static void setNames(String[] enterNames) { //send in a new array to replace current names array's content
+        names = Arrays.copyOf(enterNames, enterNames.length);
     }
 
     public static void clear() { //clear the content of current names array
-        names = new String[names.length];
+        names = new String[0];
     }
 
     public static String[] findAll() { //return the content of current names array in a new array newNames
         String[] newNames = new String[names.length];
-        for (int i = 0; i < names.length-1; i++) {
+        for (int i = 0; i < names.length; i++) {
             newNames[i] = names[i];
         }
         return newNames;
