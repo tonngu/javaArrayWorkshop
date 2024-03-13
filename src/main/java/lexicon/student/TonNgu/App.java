@@ -9,7 +9,12 @@ public class App {
         for (String abc : allStoredNames) { //print all stored names
             System.out.println(abc);
         }
-
+        String findTestResult = NameRepository.find("Maria");
+        if (findTestResult != null) {
+            System.out.println("Name found");
+        } else {
+            System.out.println("Name not found");
+        }
     }
 
 }
