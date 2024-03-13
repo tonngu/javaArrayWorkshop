@@ -1,16 +1,15 @@
 package lexicon.student.TonNgu;
 
-import javax.naming.Name;
-
 public class App {
     public static void main(String[] args) {
         //testing NameRepository functions
-        String[] myName = {"Tony"," ", "Nguyen"};
-        NameRepository.setNames(myName);
-        String[] newNames =NameRepository.findAll();
-        for (String name : newNames){
-            System.out.println(name);
+        String[] newNames = {"Tony" + " " + "Nguyen", "Mehrdad" + " " + "Javan", "Simon" + " " + "Elbrink"};
+        NameRepository.setNames(newNames); //store names from newNames array
+        String[] allStoredNames = NameRepository.findAll();
+        for (String abc : allStoredNames) { //print all stored names
+            System.out.println(abc);
         }
+
     }
 
 }

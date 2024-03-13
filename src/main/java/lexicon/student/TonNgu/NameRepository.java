@@ -25,11 +25,16 @@ public class NameRepository {
         return newNames;
     }
 
-    public static String find(final String fullName){
-
+    public static String find(final String fullName) {
+        for (String check : names) {
+            if (check != null && check.equals(fullName)) {
+                return check;
+            }
+        }
+        return null;
     }
 
-    public static boolean add(final String fullName){
-
+    public static boolean add(final String fullName) {
+        return true;
     }
 }
