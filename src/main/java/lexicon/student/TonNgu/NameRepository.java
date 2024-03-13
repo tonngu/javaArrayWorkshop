@@ -63,7 +63,7 @@ public class NameRepository {
         return searchResult;
     }
 
-    public static boolean remove(final String fullName) { //Remove a specified name from the currently stored names and return a boolean statement whether or not the name was removed
+    public static boolean remove(final String fullName) { //Remove a specified name from the currently stored names and return a boolean statement regardless of whether the name was removed
         if (find(fullName) != null) {
             String[] searchResult = new String[0];
 
@@ -78,6 +78,8 @@ public class NameRepository {
         } else {
             return false;
         }
+
+        //reminder to work on a different solution for remove without using method find
     }
 
 }
